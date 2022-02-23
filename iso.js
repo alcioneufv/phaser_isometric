@@ -1,4 +1,3 @@
-
 var directions = {
     west: { offset: 0, x: -2, y: 0, opposite: 'east' },
     northWest: { offset: 32, x: -2, y: -1, opposite: 'southEast' },
@@ -20,8 +19,6 @@ var anims = {
 
 var cursors;
 var agente;
-var skeletons = [];
-
 var tileWidthHalf;
 var tileHeightHalf;
 
@@ -154,30 +151,9 @@ class Example extends Phaser.Scene
         this.buildMap();
         this.placeHouses();
 
-//        skeletons.push(this.add.existing(new Skeleton(this, 240, 290, 'walk', 'southEast', 100)));
-//        skeletons.push(this.add.existing(new Skeleton(this, 100, 380, 'walk', 'southEast', 230)));
         agente = this.add.existing(new Skeleton(this, 620, 140, 'walk', 'south', 380));
-        skeletons.push(agente);
-//        skeletons.push(this.add.existing(new Skeleton(this, 460, 180, 'idle', 'south', 0)));
-
-//        skeletons.push(this.add.existing(new Skeleton(this, 760, 100, 'attack', 'southEast', 0)));
-//        skeletons.push(this.add.existing(new Skeleton(this, 800, 140, 'attack', 'northWest', 0)));
-
-//        skeletons.push(this.add.existing(new Skeleton(this, 750, 480, 'walk', 'east', 200)));
-
-//        skeletons.push(this.add.existing(new Skeleton(this, 1030, 300, 'die', 'west', 0)));
-
-//        skeletons.push(this.add.existing(new Skeleton(this, 1180, 340, 'attack', 'northEast', 0)));
-
-//        skeletons.push(this.add.existing(new Skeleton(this, 1180, 180, 'walk', 'southEast', 160)));
-
-//        skeletons.push(this.add.existing(new Skeleton(this, 1450, 320, 'walk', 'southWest', 320)));
-//        skeletons.push(this.add.existing(new Skeleton(this, 1500, 340, 'walk', 'southWest', 340)));
-//        skeletons.push(this.add.existing(new Skeleton(this, 1550, 360, 'walk', 'southWest', 330)));
 
         this.cameras.main.setSize(1600, 600);
-
-        // this.cameras.main.scrollX = 800;
     }
 
     update ()
@@ -191,35 +167,10 @@ class Example extends Phaser.Scene
         } else if (cursors.down.isDown) {
             agente.changeState('walk', 'south') 
         }
-            
-        skeletons.forEach(function (skeleton) {
-            skeleton.update();
-        });
 
-      //  this.cameras.main.x = agente.x;
-      //  this.cameras.main.y = agente.y;
+        agente.update();
+
         this.cameras.main.centerOn(agente.x+400, agente.y-150);
-        // return;
-/*
-        if (d)
-        {
-            this.cameras.main.scrollX -= 0.5;
-
-            if (this.cameras.main.scrollX <= 0)
-            {
-                d = 0;
-            }
-        }
-        else
-        {
-            this.cameras.main.scrollX += 0.5;
-
-            if (this.cameras.main.scrollX >= 800)
-            {
-                d = 1;
-            }
-        }
-        */
     }
 
 
@@ -278,6 +229,10 @@ const config = {
     height: 600,
     backgroundColor: '#ababab',
     parent: 'phaser-example',
+    physics: {
+        default: 'arcade',
+        arcade: {gravity: { y: 300 }, debug: false }
+    },
     scene: [ Example ]
 };
 
