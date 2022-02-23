@@ -190,8 +190,9 @@ class Example extends Phaser.Scene
             skeleton.update();
         });
 
-        this.cameras.main.x = agente.x;
-        this.cameras.main.y = agente.y;
+      //  this.cameras.main.x = agente.x;
+      //  this.cameras.main.y = agente.y;
+        this.cameras.main.centerOn(0, 0);
         // return;
 /*
         if (d)
