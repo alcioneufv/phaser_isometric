@@ -182,17 +182,23 @@ class Example extends Phaser.Scene
 
     update ()
     {
-        if (cursors.left.isDown) {
-            
+        if (cursors.right.isDown) {
            agente.changeState('walk', 'east') 
+        } else if (cursors.left.isDown) {
+            agente.changeState('walk', 'west') 
+        } else if (cursors.up.isDown) {
+            agente.changeState('walk', 'north') 
+        } else if (cursors.down.isDown) {
+            agente.changeState('walk', 'south') 
         }
+            
         skeletons.forEach(function (skeleton) {
             skeleton.update();
         });
 
       //  this.cameras.main.x = agente.x;
       //  this.cameras.main.y = agente.y;
-        this.cameras.main.centerOn(800, 300);
+        this.cameras.main.centerOn(agente.x, agente.y);
         // return;
 /*
         if (d)
