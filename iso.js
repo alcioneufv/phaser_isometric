@@ -21,6 +21,7 @@ var cursors;
 var agente;
 var tileWidthHalf;
 var tileHeightHalf;
+var data;
 
 var d = 0;
 
@@ -177,7 +178,7 @@ class Example extends Phaser.Scene
     buildMap ()
     {
         //  Parse the data out of the map
-        const data = scene.cache.json.get('map');
+        data = scene.cache.json.get('map');
 
         const tilewidth = data.tilewidth;
         const tileheight = data.tileheight;
@@ -229,10 +230,6 @@ const config = {
     height: 600,
     backgroundColor: '#ababab',
     parent: 'phaser-example',
-    physics: {
-        default: 'arcade',
-        arcade: {gravity: { y: 300 }, debug: false }
-    },
     scene: [ Example ]
 };
 
