@@ -152,7 +152,7 @@ class Example extends Phaser.Scene
         this.buildMap();
         this.placeHouses();
 
-        agente = this.add.existing(new Skeleton(this, 800, 0, 'walk', 'south', 380));
+        agente = this.add.existing(new Skeleton(this, 800, 0, 'walk', 'south', 600));
 
         this.cameras.main.setSize(1600, 600);
     }
