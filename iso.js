@@ -192,7 +192,7 @@ class Example extends Phaser.Scene
 
       //  this.cameras.main.x = agente.x;
       //  this.cameras.main.y = agente.y;
-        this.cameras.main.centerOn(0, 0);
+        this.cameras.main.centerOn(800, 300);
         // return;
 /*
         if (d)
