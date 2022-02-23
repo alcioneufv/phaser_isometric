@@ -11,31 +11,11 @@ var directions = {
 };
 
 var anims = {
-    idle: {
-        startFrame: 0,
-        endFrame: 4,
-        speed: 0.2
-    },
-    walk: {
-        startFrame: 4,
-        endFrame: 12,
-        speed: 0.15
-    },
-    attack: {
-        startFrame: 12,
-        endFrame: 20,
-        speed: 0.11
-    },
-    die: {
-        startFrame: 20,
-        endFrame: 28,
-        speed: 0.2
-    },
-    shoot: {
-        startFrame: 28,
-        endFrame: 32,
-        speed: 0.1
-    }
+    idle:  {startFrame: 0, endFrame: 4,  speed: 0.2  },
+    walk:  {startFrame: 4, endFrame: 12, speed: 0.15 },
+    attack:{startFrame: 12,endFrame: 20, speed: 0.11 },
+    die:   {startFrame: 20,endFrame: 28, speed: 0.2  },
+    shoot: {startFrame: 28,endFrame: 32, speed: 0.1  }
 };
 
 var cursors;
@@ -210,8 +190,10 @@ class Example extends Phaser.Scene
             skeleton.update();
         });
 
+        this.cameras.main.x = agente.x;
+        this.cameras.main.y = agente.y;
         // return;
-
+/*
         if (d)
         {
             this.cameras.main.scrollX -= 0.5;
@@ -230,6 +212,7 @@ class Example extends Phaser.Scene
                 d = 1;
             }
         }
+        */
     }
 
 
