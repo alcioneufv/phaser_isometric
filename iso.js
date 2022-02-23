@@ -204,7 +204,7 @@ class Example extends Phaser.Scene
     {
         if (cursors.left.isDown) {
             
-           skeleton.changeState('walk', 'east') 
+           agente.changeState('walk', 'east') 
         }
         skeletons.forEach(function (skeleton) {
             skeleton.update();
