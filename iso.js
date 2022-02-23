@@ -202,6 +202,10 @@ class Example extends Phaser.Scene
 
     update ()
     {
+        if (cursors.left.isDown) {
+            
+           skeleton.changeState('walk', 'east') 
+        }
         skeletons.forEach(function (skeleton) {
             skeleton.update();
         });
