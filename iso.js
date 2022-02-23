@@ -68,6 +68,14 @@ class Skeleton extends Phaser.GameObjects.Image {
 
         scene.time.delayedCall(this.anim.speed * 1000, this.changeFrame, [], this);
     }
+    
+    changeState(motion, direction) 
+    {
+        this.direction = directions[direction];
+        this.motion = motion;
+        this.anim = anims[motion];
+        this.f = this.anim.startFrame;
+    }
 
     changeFrame ()
     {
