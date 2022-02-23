@@ -169,7 +169,7 @@ class Example extends Phaser.Scene
         skeletons.push(this.add.existing(new Skeleton(this, 240, 290, 'walk', 'southEast', 100)));
         skeletons.push(this.add.existing(new Skeleton(this, 100, 380, 'walk', 'southEast', 230)));
         agente = this.add.existing(new Skeleton(this, 620, 140, 'walk', 'south', 380));
-       // skeletons.push(agente);
+        skeletons.push(agente);
         skeletons.push(this.add.existing(new Skeleton(this, 460, 180, 'idle', 'south', 0)));
 
         skeletons.push(this.add.existing(new Skeleton(this, 760, 100, 'attack', 'southEast', 0)));
