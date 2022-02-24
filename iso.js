@@ -23,8 +23,6 @@ var tileWidthHalf;
 var tileHeightHalf;
 var data;
 
-var gramado = [];
-
 var d = 0;
 
 var scene;
@@ -211,8 +209,6 @@ class Example extends Phaser.Scene
 
                 tile.depth = centerY + ty;
                 
-                if (id < 8) { gramado.push([centerX + tx, centerY + ty]);}
-
                 i++;
             }
         }
